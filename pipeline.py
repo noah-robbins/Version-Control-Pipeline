@@ -12,14 +12,7 @@ PRIMARY_DATA_FILE = os.path.join(LOCAL_DATA_PATH, 'primary_cheshire_street.csv')
 REPORTING_DATA_FILE = os.path.join(LOCAL_DATA_PATH, 'reporting_cheshire_street.csv')
 
 
-# Configure logging
-logging.basicConfig(
-    filename=LOG_FILE,
-    filemode='a',
-    format='%(asctime)s %(levelname)s:%(message)s',
-    datefmt='%Y-%m-%d %H:%M:%S',
-    level=logging.INFO
-)
+
 
 def ingest_data(file_path):
     """
@@ -175,3 +168,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+print( Hello Noah! )
