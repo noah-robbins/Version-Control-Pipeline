@@ -12,7 +12,7 @@ PRIMARY_DATA_FILE = os.path.join(LOCAL_DATA_PATH, 'primary_cheshire_street.csv')
 REPORTING_DATA_FILE = os.path.join(LOCAL_DATA_PATH, 'reporting_cheshire_street.csv')
 
 
-
+print( "hello  noah!!!")
 
 def ingest_data(file_path):
     """
