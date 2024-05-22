@@ -72,8 +72,24 @@ def apply_categorization(df):
     return df
 
 def del_values_street(df):
+    """
+    Delete unnecessary columns from the DataFrame.
+    """
+    cols_to_delete = ['Reported by', 'Context', 'Location', 'Last outcome category', 'Outcome type', 'Final Outcome']
+    df.drop(columns=cols_to_delete, inplace=True)
+    return df
 
-
+def stage_data(df, df_outcomes, output_file):
+    """
+    Store the data to a CSV file for staging.
+    """
+    logging.info("Starting data staging")
+    try:
+        # Apply transformations
+        df = merge_data(df, df_outcomes)
+        df = finaloutcome(df)
+        df = apply_categorization(df)
+        df = del_values_street(df)
 
         # Save to CSV
         df.to_csv(output_file, index=False)
